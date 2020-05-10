@@ -3,63 +3,40 @@ layout: post
 title: Past Projects and Research
 ---
 
-I spend a lot of my time learning and creating, and I'm trying to be better about documenting the process. To that end, this post will be a summary of some projects I worked on with colleagues while I was in school and when I first began to teach.
-<p align="center"> 
-<img src="/assets/dna_gate3.png" alt="DNA logic gate with some input and output strands." >
-</p>
+I spend a lot of my time learning and creating, and I'm trying to be better about documenting the process. To that end, this post will be a summary of some projects I worked on with colleagues while I was in school.
 
 <!--more-->
 
 ---
 
-## Project 1: Activity Recognition
+## Project 1: Warehouse Management Robot
 
-Using physiological data collected by wearable technology, such as the acceleration and heat flux of a person's body, this project intelligently characterizes the activity a user performed.
+The robot prototype was developed as a part of [E-yantra Robotics Competition](https://www.e-yantra.org/) organized by IIT Bombay. The robot uses an ATmega256 by Atmel. The robot was equipped with various sensors for positioning and motion.
 
-Wearable sensor technology has been investigated as a way to regularly monitor a person's health from watches that track your heart rate during exercise, to wearable devices that use accelerometer data to check if someone has fallen or not. In this project, we use data, collected by wearable devices, to classify a person's activity into one of three classes: sleeping, watching TV, and all other activities.
+We were given a map which had black lines to aid the movement of the robot. The map had some points designated as pick-up zones and deposit zones.
 
-This follows the guidelines of the Physiological Data Modeling Contest (PDMC) contest, and you can read more about this data and the challenge in [the project paper]({{ site.url }}/assets/activity_recognition.pdf).
+The task of the robot was to identify valid packages based on the color. For e.g. black packages were considered invalid and hence were not picked by the robot. The robot had to search the entire map for valid packages. These packages were picked up by the robot from the pick-up zones and deposited in specified zones in the map. The robot used the shortest possible path to travel from one point to the other.
 
-To approach this challenge, we compared unsupervised learning algorithms with supervised approaches. Our hypothesis was: a supervised algorithm would produce the most accurate test results, but a good, unsupervised algorithm would be ideal since it is time-intensive to create richly-labeled data for training.
-
+Here's a short video with our robot in action:
 <p align="center"> 
-<img src="/assets/activity_rec.png" alt="LDA separated data into three classes: sleeping, watching TV, or other." >
+<iframe width="560" height="315" src="https://www.youtube.com/embed/KoRefZWZhJM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </p>
-
-**Linear Discriminant Analysis**
-
-In the image above, you can see an example of data separation done with linear discriminant analysis (LDA), which is a supervised learning model. The original data features included several different types of collected, sensor data; acceleration, heat flux, body temperature, and so on. In this case, LDA was trained on some training data and used as a feature reduction technique, which squashed the original features into 2D space while trying to maintain the greatest possible separation between classes. We decomposed the data into two new LDA components (linear combinations of the original features), and could then visualize these class groupings in space. You can see the separation between sleeping and other activity classes, but watching TV gets obscured.
-
-We did get the best performance using supervised algorithms, but this project did get me thinking about how unsupervised approaches might be improved.
 
 ---
 
-## Project 2: Cell Detection
+## Project 2: Bus arrival detection using BLE beacons and acoustics
 
-This project uses supervised learning algorithms and graph-mining techniques to automatically count and detect embryonic cells as they grow.
+The project aimed at tracking the position of a bus approaching a bus-stop using Bluetooth Low Energy (BLE). 
 
-Cell detection and counting in the context of biology research is largely a labor-intensive, manual task. A reliable count is of paramount importance as it is often a fundamental step in various growth studies; most commonly in embryonic or cancer cell growth analysis. In this project, we studied the efficacy of SVM and graph-mining algorithms to automatically detect and count embryonic stem cells in fluorescent microscopy images. You can read about the detailed results, [in this paper]({{ site.url }}/assets/embryonic_stem_cells.pdf).
+**Architecture**
 
-<p align="center"> 
-<img src="/assets/cell_detection_svm.png">
-</p>
+The architecture had a BLE beacon (installed inside the bus) and a Raspberry-pi with BLE scanner (installed at the bus-stop). The beacon broadcasted details of the bus needed which is scanned by Raspberry-pi and is displayed at a bus-stop. 
 
-**Graph Construction**
-
-To perform graph-mining, we constructed a graph that separated individual cells based on patterns of intensity in a given image. A cell nucleus was very bright, but its edges and the background were darker. So, in this approach, each cell in an image is modeled as a smooth 2D function that has a single local maximum in its neighborhood. We used this model to perform histogram segmentation.
+Raspberry-pi also Gaussian Mixture Model(GMM) based audio classifier trained with different audio samples of the traffic noise. Once a bus was detected, the classifier was used to evaluate the traffic congestion and calculate the estimated time of arrival(ETA) of the bus. The project was done under the supervision of Prof.Naveen Aggarwal at Design Innovation Center(DIC), Panjab University. The experimental observations were published in the [paper]({{site.url}}/blog/assets/ICCCN-17-126.pdf) of ICCCN 2017 organized at NITTTR, Chandigarh.
 
 <p align="center"> 
-<img src="/assets/hist_segmentation.png" alt="Cells segmented into different areas by brightness." >
+<img src="/blog/assets/bus.jpg">
 </p>
-
-We traversed the histogram from the brightest range to the darkest, and assigned a numerical label to each pixel in the image, such that pixels with higher intensities have smaller label values (as you can see in the above image). Then we used these numbered segments to construct a graph.
-
-<p align="center"> 
-<img src="/assets/cell_graph.png" alt="A graph corresponding to several cells." >
-</p>
-
-We used a matrix representation for this graph. Then, for each pixel in the segmented image, looked at four neighboring pixel labels to populate the matrix. Once the undirected graph was created, every cell in the input image had an associated simple path in that graph, and the intensity-peak of each cell was marked as the location of that cell. 
-We also took some extra processing steps to account for multiple peaks in one cell, and to account for some cell overlap, and eventually found that graph-mining worked well.
 
 ---
 
