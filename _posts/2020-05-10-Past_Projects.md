@@ -12,11 +12,11 @@ I spend a lot of my time learning and creating, and I'm trying to be better abou
 
 ## Project 1: Bus arrival detection using BLE beacons and acoustics
 
-The project aimed at tracking the position of a bus approaching a bus-stop using Bluetooth Low Energy (BLE). 
+The project aimed at tracking the position of a bus approaching a bus-stop using Blue-tooth Low Energy (BLE). 
 
 **Prototype**
 
-The protoype was built over a raspberry-pi 4. A 16x2 LCD screen was used to display details of beacons in range.
+The prototype was built over a raspberry-pi 4. A 16x2 LCD screen was used to display details of beacons in range.
 
 <p align="center"> 
 <img src="/blog/assets/hmsoft-min.jpg" width="400" height="255" alt="Buss arrival detection">
@@ -25,7 +25,7 @@ The protoype was built over a raspberry-pi 4. A 16x2 LCD screen was used to disp
 
 **Architecture and Working**
 
-The architecture had a BLE beacon (installed inside the bus) and a Raspberry-pi with BLE scanner (installed at the bus-stop). The beacon broadcasted details of the bus needed which is scanned by Raspberry-pi and is displayed at a bus-stop. 
+The architecture had a BLE beacon (installed inside the bus) and a Raspberry-pi with BLE scanner (installed at the bus-stop). The beacon broad casted details of the bus needed which is scanned by Raspberry-pi and is displayed at a bus-stop. 
 
 Raspberry-pi also Gaussian Mixture Model(GMM) based audio classifier trained with different audio samples of the traffic noise. 
 
