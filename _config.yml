@@ -30,16 +30,52 @@ url: "ankitk50.github.io/blog/" # the base hostname & protocol for your site, e.
 twitter_username: oldMagnum
 github_username:  ankitk50
 #permalink: /:title/
+
+footer-links:
+  dribbble:
+  email: ankitk50@gmail.com
+  facebook:
+  flickr:
+  github: ankitk50
+  instagram:
+  linkedin: https://www.linkedin.com/in/ankitk50/
+  pinterest:
+  rss: # just type anything here for a working RSS icon
+  twitter: oldMagnum
+  stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
+  youtube: # channel/<your_long_string> or user/<user-name>
+  googleplus:
+
+google_analytics: UA-166296316-1
 # Build settings
 markdown: kramdown
+
+kramdown:
+  # Use GitHub flavored markdown, including triple backtick fenced code blocks
+  input: GFM
+  # Jekyll 3 and GitHub Pages now only support rouge for syntax highlighting
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    # Use existing pygments syntax highlighting css
+    css_class: 'highlight'
+
+sass:
+  style: :expanded # You might prefer to minify using :compressed
+
+# Use the following plug-ins
+gems:
+  - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
+  - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jekyll-avatar
+
+
 theme: minima
+
 plugins:
   - jekyll-feed
   - jekyll-avatar
 
-gems:
-  - jekyll-avatar
-
+  
 
 
 # Exclude from processing.

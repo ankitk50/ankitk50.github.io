@@ -23,13 +23,15 @@ The protoype was built over a raspberry-pi 4. A 16x2 LCD screen was used to disp
 </p>
 
 
-**Architecture**
+**Architecture and Working**
 
 The architecture had a BLE beacon (installed inside the bus) and a Raspberry-pi with BLE scanner (installed at the bus-stop). The beacon broadcasted details of the bus needed which is scanned by Raspberry-pi and is displayed at a bus-stop. 
 
 Raspberry-pi also Gaussian Mixture Model(GMM) based audio classifier trained with different audio samples of the traffic noise. 
 
-Once a bus was detected, the classifier was used to evaluate the traffic congestion and calculate the estimated time of arrival(ETA) of the bus. The project was done at Design Innovation Center(DIC), Panjab University. The experimental observations were published in the [paper]({{site.url}}/blog/assets/ICCCN-17-126.pdf) of ICCCN-2017 organized at NITTTR, Chandigarh.
+Once a bus was detected, the classifier was used to evaluate the traffic congestion and calculate the estimated time of arrival(ETA) of the bus. The details would be displayed on the LCD screen. As soon and the bus arrives at the bus-stop, details of the bus are announced and displayed on the screen.
+
+The project was done at Design Innovation Center(DIC), Panjab University. The experimental observations were published in the [paper]({{site.url}}/blog/assets/ICCCN-17-126.pdf) of ICCCN-2017 organized at NITTTR, Chandigarh.
 
 
 ---
