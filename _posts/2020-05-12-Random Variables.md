@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Fourier Series with Python
+title: Convolution in all its glory
 comment: true
 ---
 <p align="center"> 
