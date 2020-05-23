@@ -128,7 +128,7 @@ Apart from this, convolutions also work with images and have immense application
 ---
 
 ## Further exploration
-Listen more to convolution at [CKSDE](http://www.cksde.com/). This [video](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/video-lectures/lecture-4-convolution/) provides in-depth explanation of convolution in the light of signal theory.
+Listen more to examples of convolution at [CKSDE](http://www.cksde.com/p_6_250.htm). This [video](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/video-lectures/lecture-4-convolution/) at MIT opencourseware by Prof. Alan V. Oppenheim provides in-depth explanation of convolution in the light of signal theory.
 
 
 ---

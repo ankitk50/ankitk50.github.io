@@ -25,8 +25,8 @@ name : Ankit Kumar
 avatar: https://avatars.githubusercontent.com/ankitk50
 description: >- # this means to ignore newlines until "baseurl:"
   A random variable on weekends
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "ankitk50.github.io/blog/" # the base hostname & protocol for your site, e.g. http://example.com "ankitk50.github.io/blog"
+baseurl: "ankitk50.github.io" #"/blog" # the subpath of your site, e.g. /blog
+url: "ankitk50.github.io" # the base hostname & protocol for your site, e.g. http://example.com "ankitk50.github.io/blog"
 twitter_username: oldMagnum
 github_username:  ankitk50
 #permalink: /:title/
