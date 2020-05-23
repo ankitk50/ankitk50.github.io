@@ -25,7 +25,7 @@ The prototype was built over a raspberry-pi 4. A 16x2 LCD screen was used to dis
 
 **Architecture and Working**
 
-The architecture had a BLE beacon (installed inside the bus) and a Raspberry-pi with BLE scanner (installed at the bus-stop). The beacon broad casted details of the bus needed which is scanned by Raspberry-pi and is displayed at a bus-stop. 
+The architecture had a BLE beacon (installed inside the bus) and a Raspberry-pi with BLE scanner (installed at the bus-stop). The beacon broadcasted details of the bus needed which is scanned by Raspberry-pi and is displayed at a bus-stop. 
 
 Raspberry-pi also Gaussian Mixture Model(GMM) based audio classifier trained with different audio samples of the traffic noise. 
 
@@ -42,7 +42,7 @@ The robot prototype was developed as a part of [E-yantra Robotics Competition](h
 
 We were given a map which had black lines to aid the movement of the robot. The map had some points designated as pick-up zones and deposit zones.
 
-The task of the robot was to identify valid packages based on the color. For e.g. black packages were considered invalid and hence were not picked by the robot. The robot had to search the entire map for valid packages. These packages were picked up by the robot from the pick-up zones and deposited in specified zones in the map. The robot used the shortest possible path to travel from one point to the other.
+The task of the robot was to identify valid packages based on the color. For e.g. black packages were considered invalid and hence were not picked by the robot. The robot had to search the entire map for valid packages. These packages were picked up by the robot from the pick-up zones and deposited in specified zones on the map. The robot used the shortest possible path to travel from one point to the other.
 
 Here's a short video with our robot in action:
 <p align="center"> 
