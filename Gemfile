@@ -30,3 +30,6 @@ gem "wdm", "~> 0.1.1", :install_if => Gem.win_platform?
 
 gem 'jekyll-avatar'
 
+gem 'jekyll_figure'
+
+gem 'jekyll-figure'

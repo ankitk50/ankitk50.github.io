@@ -40,7 +40,7 @@ footer-links:
   instagram:
   linkedin: ankitk50
   pinterest:
-  rss: # just type anything here for a working RSS icon
+  rss: true # just type anything here for a working RSS icon
   twitter: oldMagnum
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
@@ -74,6 +74,7 @@ theme: minima
 plugins:
   - jekyll-feed
   - jekyll-avatar
+  - jekyll-figure
 
   
 
@@ -86,6 +87,10 @@ plugins:
 # Excluded items can be processed by explicitly listing the directories or
 # their entries' file path in the `include:` list.
 #
+exclude:
+  - Gemfile
+  - Gemfile.lock
+
 # exclude:
 #   - .sass-cache/
 #   - .jekyll-cache/

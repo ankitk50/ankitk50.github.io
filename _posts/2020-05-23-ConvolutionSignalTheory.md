@@ -14,15 +14,18 @@ Convolution is a key to deciphering various aspects of signal theory. This conce
 
 Signals are waves that carry information. Anything that accepts a signal as input and gives an output signal is a system. Systems process and transform the information as a signal passes through them. Let's consider the following scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. 
 
-<p align="center"> 
-<img src="/blog/assets/conversation.gif" width="400" height="150" alt="converation">
-</p>
+<figure align="center">
+<img src="/blog/assets/conversation2.gif" width="220" height="250" alt="converation">
+<figcaption align="center" style="font-size:15px" ><em><b>Fig 1:</b> An exemplary conversation </em></figcaption>
+</figure>
 
 The voice signal flows through the air channel producing an output voice signal, received by the listener. The air channel alters the voice signal by adding distortions and noise.
 
-<p align="center"> 
+<figure align="center">
 <img src="/blog/assets/system.png" width="650" height="150" alt="signal System">
-</p>
+<figcaption align="center" style="font-size:15px" ><em><b>Fig 2:</b> System input output </em></figcaption>
+</figure>
+
 
 It is often desired to model and understand the behavior of these systems. If we can somehow determine the equation governing the system, it would allow us to evaluate the behavior of the system for more types of signals. We can evaluate the effect of the channel on say, on WiFi signals, or blue-tooth signals.
 
@@ -71,9 +74,11 @@ ax3.plot(response,'green')
 
 ```
 The output looks like this: 
-<p align="center"> 
+
+<figure align="center">
 <img src="/blog/assets/impulse_response.jpg" width="800" height="300" alt="impulse response">
-</p> 
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 3:</b> Convoulution of an impulse with a system </em></figcaption>
+</figure>
 
 
 Here, the output of the system is given as convolution of input signal $$h(t)$$ with system equation. The convolution of signal $$x(t)$$ with system $$h(t)$$ is defined as:
@@ -87,13 +92,14 @@ $$
 
 Under the hood, the operation simply means flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. This is shown in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
 
-<p align="center"> 
+<figure align="center">
+<p> 
 <img src="/blog/assets/Convolution_of_box_signal_with_itself2.gif" width="580" height="160" alt="convolution">
 </p> 
-
-<p align="center"> 
 <img src="/blog/assets/Convolution_of_spiky_function_with_box2.gif" width="580" height="160" alt="convolution">
-</p> 
+
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 4:</b> Convoulution operation of two signals </em></figcaption>
+</figure>
 
 Notice, how one signal changes and tries to capture some of the features of the another. The convolution operation is all about capturing the behavior of the system and applying them to input signals. The output is signal is derived using the characteristics of the input signal as well as the system.
 
