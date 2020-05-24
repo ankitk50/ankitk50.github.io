@@ -8,22 +8,23 @@ comment: true
 </p>
 <!--<img src="/blog/assets/jfourier.jpg" width="120" height="150" alt="fourier_gif"> -->
 
-
-
 Convolution is a key to deciphering various aspects of signal theory. This concept is often left to its theoretical analysis and analytical perplexity. This is an attempt to illuminate this beautiful concept with some intuitive examples and explanations. 
 
 ## Introduction
 
-Signals are waves that carry information. Anything that accepts a signal as input and gives an output signal is a system. Systems process and transform the information as a signal passes through them. Let's consider the following scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. The voice signal flows through the air channel producing an output voice signal, received by the listener.
+Signals are waves that carry information. Anything that accepts a signal as input and gives an output signal is a system. Systems process and transform the information as a signal passes through them. Let's consider the following scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. 
 
 <p align="center"> 
 <img src="/blog/assets/conversation.gif" width="400" height="150" alt="converation">
 </p>
+
+The voice signal flows through the air channel producing an output voice signal, received by the listener. The air channel alters the voice signal by adding distortions and noise.
+
 <p align="center"> 
 <img src="/blog/assets/system.png" width="650" height="150" alt="signal System">
 </p>
 
-The air channel alters the voice signal by adding distortions and noise. It is often desired to model and understand the behavior of these systems. If we can somehow determine the equation governing the system, it would allow us to evaluate the behavior of the system for more types of signals. We can evaluate the effect of the channel on say, on WiFi signals, or blue-tooth signals.
+It is often desired to model and understand the behavior of these systems. If we can somehow determine the equation governing the system, it would allow us to evaluate the behavior of the system for more types of signals. We can evaluate the effect of the channel on say, on WiFi signals, or blue-tooth signals.
 
 ---
 
