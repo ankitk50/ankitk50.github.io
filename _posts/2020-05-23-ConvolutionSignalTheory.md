@@ -172,6 +172,37 @@ $$
 </figcaption>
 </figure>
 
+This same techniques can be applied to images as follows in python:
+
+```python
+import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
+import cv2
+import numpy as np
+
+# Read in the image
+image = mpimg.imread('cameraman-grayscale.png')
+
+# Outline filter
+outline= np.array([[-1,-1,-1],
+                 [-1,8,-1],
+                 [-1,-1,-1]])
+
+# applying filter to the image
+filtered_image = cv2.filter2D(image, -1, outline)
+plt.imshow(image)
+plt.imshow(filtered_image, cmap='gray')
+
+```
+Here, we convolved the image with an outline filter: $$\begin{pmatrix}-1 & -1 & -1 \\ -1 & 8 & -1 \\-1 & -1 & -1 \end{pmatrix}$$. 
+
+The output shall generate two following images:
+
+<figure class="half" style="display:flex">
+    <img style="width:300px" src="/blog/assets/cameraman-grayscale.png">
+    <img style="width:600px" src="/blog/assets/cameraman_oultine.png">
+</figure>
+<figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em></figcaption>
 ---
 
 ## Further exploration
