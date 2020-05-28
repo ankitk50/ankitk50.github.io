@@ -90,7 +90,7 @@ $$
 \end{align*}
 $$ 
 
-Under the hood, the operation simply means flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. This is shown in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
+Under the hood, the operation simply means flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. It has two fundamental operations, shifting and adding. These two fundamental operations remain same across different applications such as image processing and audio signal processing. This is shown in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
 
 <figure align="center">
 <p> 
@@ -131,6 +131,46 @@ In this example, audio of a snare drum is fed as an input to a system that produ
 
 
 Apart from this, convolutions also work with images and have immense applications in image recognition, filtering, etc. These are some interesting topics, which I would cover separately in my future posts.
+
+### Example 3:
+
+In image processing, slightly different terminologies are used. Instead of having a signal/system, here we have an input image(signal) and an image kernel (system). As images are nothing but matrices, the kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
+
+The covolution operation here as well, involves shifting and adding. The kernal slides over the image. As the kernel slides, an element-wise multiplication is performed with the pixels of the image. The sum of these multiplications becomes a pixel of the output/filtered image.
+
+Given below is an example of convolution operation between two matrices
+
+$$
+\begin{align*}
+  & \left( \begin{array}{ccc}
+      3 & 3 & 2 & 1 & 0 \\
+      0 & 0 & 1 & 3 & 1 \\ 
+      3 & 1 & 2 & 2 & 3 \\ 
+      2 & 0 & 0 & 2 & 2 \\ 
+      2 & 0 & 0 & 0 & 1
+    \end{array} \right)
+     \ast
+  \left( \begin{array}{c}
+      0 & 1 & 2 \\ 
+      2 & 2 & 0 \\ 
+      0 & 1 & 2 
+    \end{array} \right)
+  =
+    \left( \begin{array}{c}
+      12 & 12 & 17 \\ 
+      10 & 17 & 19 \\ 
+      9 & 6 & 14 
+    \end{array} \right)
+\end{align*}
+$$
+
+<figure align="center">
+<p> 
+<img src="/blog/assets/conv.gif" width="535" height="299" alt="convolution">
+</p> 
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 5:</b> Convoulution operation of two matrices <a href="https://arxiv.org/abs/1603.07285">[Source]</a></em>
+</figcaption>
+</figure>
 
 ---
 
