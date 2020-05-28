@@ -8,5 +8,5 @@ Ankit Kumar is an electrical engineer. His research interests are embedded elect
 
 ### Contact me
 
-[ankitk50@gmail.com](mailto:cezannec@alumni.stanford.edu)
+[ankitk50@gmail.com](mailto:ankitk50@gmail.com)
 
