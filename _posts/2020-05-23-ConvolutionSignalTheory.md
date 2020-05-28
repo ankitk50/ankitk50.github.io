@@ -77,7 +77,7 @@ The output looks like this:
 
 <figure align="center">
 <img src="/blog/assets/impulse_response.jpg" width="800" height="300" alt="impulse response">
-<figcaption align="center"  style="font-size:15px" ><em><b>Fig 3:</b> Convoulution of an impulse with a system </em></figcaption>
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 3:</b> Convolution of an impulse with a system </em></figcaption>
 </figure>
 
 
@@ -98,7 +98,7 @@ Under the hood, the operation simply means flipping one of the signals and sweep
 </p> 
 <img src="/blog/assets/Convolution_of_spiky_function_with_box2.gif" width="580" height="160" alt="convolution">
 
-<figcaption align="center"  style="font-size:15px" ><em><b>Fig 4:</b> Convoulution operation of two signals </em></figcaption>
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 4:</b> Convolution operation of two signals </em></figcaption>
 </figure>
 
 Notice, how one signal changes and tries to capture some of the features of the another. The convolution operation is all about capturing the behavior of the system and applying them to input signals. The output is signal is derived using the characteristics of the input signal as well as the system.
@@ -136,9 +136,9 @@ Apart from this, convolutions also work with images and have immense application
 
 In image processing, slightly different terminologies are used. Instead of having a signal/system, here we have an input image(signal) and an image kernel (system). As images are nothing but matrices, the kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
 
-The covolution operation here as well, involves shifting and adding. The kernal slides over the image. As the kernel slides, an element-wise multiplication is performed with the pixels of the image. The sum of these multiplications becomes a pixel of the output/filtered image.
+The convolution operation here as well, involves shifting and adding. The kernel slides over the image. As the kernel slides, an element-wise multiplication is performed with the pixels of the image. The sum of these multiplications becomes a pixel of the output/filtered image.
 
-Given below is an example of convolution operation between two matrices
+Given below is an example of convolution operation between two matrices:
 
 $$
 \begin{align*}
@@ -168,7 +168,7 @@ $$
 <p> 
 <img src="/blog/assets/conv.gif" width="535" height="299" alt="convolution">
 </p> 
-<figcaption align="center"  style="font-size:15px" ><em><b>Fig 5:</b> Convoulution operation of two matrices <a href="https://arxiv.org/abs/1603.07285">[Source]</a></em>
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 5:</b> Convolution operation of two matrices <a href="https://arxiv.org/abs/1603.07285">[Source]</a></em>
 </figcaption>
 </figure>
 
@@ -202,11 +202,27 @@ The output shall generate two following images:
     <img style="width:300px" src="/blog/assets/cameraman-grayscale.png">
     <img style="width:600px" src="/blog/assets/cameraman_oultine.png">
 </figure>
-<figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em></figcaption>
+<figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em>
+</figcaption>
+
+Most recent and also the most exciting application of convolution is in building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network)) find application in face recognition, medical imaging, self driving cars etc. 
+<figure align="center">
+<p> 
+<img src="/blog/assets/tesla.gif" width="535" height="299" alt="convolution">
+</p> 
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 7:</b> Self driving technology <a href="https://electrek.co/2017/03/13/tesla-vision-autopilot-chip-intel-mobileye/">[Source]</a></em>
+</figcaption>
+</figure>
+
 ---
 
-## Further exploration
-Listen more to examples of convolution at [CKSDE](http://www.cksde.com/p_6_250.htm). This [video](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/video-lectures/lecture-4-convolution/) at MIT opencourseware by Prof. Alan V. Oppenheim provides in-depth explanation of convolution in the light of signal theory.
+## Further Reading
+
+
+1. [Setosa.io](https://setosa.io/ev/image-kernels/) provides interactive introduction to experiment with image kernels.
+2. You can listen more to examples of convolution at [CKSDE](http://www.cksde.com/p_6_250.htm). 
+3. This [video](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/video-lectures/lecture-4-convolution/) at MIT opencourseware by Prof. Alan V. Oppenheim provides in-depth explanation of convolution in the light of signal theory.
+4. [CS231n](https://cs231n.github.io/convolutional-networks/) is a popular course to learn and experiment with CNN. 
 
 
 ---
