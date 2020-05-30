@@ -43,7 +43,7 @@ $$
 \end{align*}
 $$ 
 
-The $$\ast$$ operator is used to denote convolution operation. Hence, convolution of impulse signal $$\delta(t)$$ with system $$h(t)$$ is known as the impulse response. We can think impulse function as an arrow to capture the characteristics of a system, which is otherwise not known. 
+The $$\ast$$ operator is used to denote convolution operation. Hence, convolution of an impulse signal $$\delta(t)$$ with system $$h(t)$$ is known as the impulse response. We can think impulse function as an arrow to capture the characteristics of a system, which is otherwise not known. 
 
 We can verify this fact in few lines of python code:
 
@@ -90,7 +90,7 @@ $$
 \end{align*}
 $$ 
 
-Under the hood, the operation simply means flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. It has two fundamental operations, shifting and adding. These two fundamental operations remain same across different applications such as image processing and audio signal processing. This is shown in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
+Under the hood, the operation simply means flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. The two fundamental operations at play are shifting and adding. These two fundamental operations appear in all forms of convolution operation. This is shown in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
 
 <figure align="center">
 <p> 
@@ -101,7 +101,7 @@ Under the hood, the operation simply means flipping one of the signals and sweep
 <figcaption align="center"  style="font-size:15px" ><em><b>Fig 4:</b> Convolution operation of two signals </em></figcaption>
 </figure>
 
-Notice, how one signal changes and tries to capture some of the features of the another. The convolution operation is all about capturing the behavior of the system and applying them to input signals. The output is signal is derived using the characteristics of the input signal as well as the system.
+Notice, how one signal changes and tries to capture some of the features of the another. The essence of convolution operation lies in capturing the behavior of the system and applying them to input signals to derive the output is signal. Hence, the output signal adorns the characteristics of the system.
 
 ---
 
@@ -109,7 +109,7 @@ Notice, how one signal changes and tries to capture some of the features of the 
 
 Convolution is an essential operation in audio signal processing where the process is used to generate different sound effects in the multimedia industry. Here are two examples from [CKSDE](http://www.cksde.com/) which allows you to listen to the convolution of two different audio samples.
 
-### Example 1:
+### Example 1.1:
 
 In this example, voice of a man is fed as an input to a system that produces a metallic delay effect. 
 
@@ -119,7 +119,7 @@ In this example, voice of a man is fed as an input to a system that produces a m
   
 <iframe width="30%" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/826316689&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>
 
-### Example 2:
+### Example 1.2:
 
 In this example, audio of a snare drum is fed as an input to a system that produces a decaying white noise.
 
@@ -132,11 +132,11 @@ In this example, audio of a snare drum is fed as an input to a system that produ
 
 Apart from this, convolutions also work with images and have immense applications in image recognition, filtering, etc. These are some interesting topics, which I would cover separately in my future posts.
 
-### Example 3:
+### Example 2:
 
-In image processing, slightly different terminologies are used. Instead of having a signal/system, here we have an input image(signal) and an image kernel (system). As images are nothing but matrices, the kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
+I would like to briefly tough upon image processing where slightly different terminologies are used. Instead of having a signal/system, we have an input image(signal) and an image kernel (system). Images and the image kernel are nothing but matrices. The image kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
 
-The convolution operation here as well, involves shifting and adding. The kernel slides over the image. As the kernel slides, an element-wise multiplication is performed with the pixels of the image. The sum of these multiplications becomes a pixel of the output/filtered image.
+Again, the convolution operation involves shifting and adding. The kernel slides over the image, element-wise multiplications are performed with the pixels of the image, and lastly the sum of these multiplications becomes a pixel of the output/filtered image.
 
 Given below is an example of convolution operation between two matrices:
 
@@ -168,7 +168,7 @@ $$
 <p> 
 <img src="/blog/assets/conv.gif" width="535" height="299" alt="convolution">
 </p> 
-<figcaption align="center"  style="font-size:15px" ><em><b>Fig 5:</b> Convolution operation of two matrices <a href="https://arxiv.org/abs/1603.07285">[Source]</a></em>
+<figcaption align="center"  style="font-size:15px" ><em><b>Fig 5:</b> Convolution operation between two matrices <a href="https://arxiv.org/abs/1603.07285">[Source]</a></em>
 </figcaption>
 </figure>
 
@@ -205,7 +205,7 @@ The output shall generate two following images:
 <figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em>
 </figcaption>
 
-Most recent and also the most exciting application of convolution is in building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN](https://en.wikipedia.org/wiki/Convolutional_neural_network)) find application in face recognition, medical imaging, self driving cars etc. 
+Most recent and exciting application of convolution explores building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN or ConvNets](https://en.wikipedia.org/wiki/Convolutional_neural_network)) find application in face recognition, medical imaging, self driving cars etc. 
 <figure align="center">
 <p> 
 <img src="/blog/assets/tesla.gif" width="535" height="299" alt="convolution">
@@ -213,6 +213,8 @@ Most recent and also the most exciting application of convolution is in building
 <figcaption align="center"  style="font-size:15px" ><em><b>Fig 7:</b> Self driving technology <a href="https://electrek.co/2017/03/13/tesla-vision-autopilot-chip-intel-mobileye/">[Source]</a></em>
 </figcaption>
 </figure>
+
+As exploring CNN is not in the scope of this post, you can find more at [CS231n](https://cs231n.github.io/convolutional-networks/). 
 
 ---
 
@@ -222,7 +224,8 @@ Most recent and also the most exciting application of convolution is in building
 1. [Setosa.io](https://setosa.io/ev/image-kernels/) provides interactive introduction to experiment with image kernels.
 2. You can listen more to examples of convolution at [CKSDE](http://www.cksde.com/p_6_250.htm). 
 3. This [video](https://ocw.mit.edu/resources/res-6-007-signals-and-systems-spring-2011/video-lectures/lecture-4-convolution/) at MIT opencourseware by Prof. Alan V. Oppenheim provides in-depth explanation of convolution in the light of signal theory.
-4. [CS231n](https://cs231n.github.io/convolutional-networks/) is a popular course to learn and experiment with CNN. 
+4. [CS231n](https://cs231n.github.io/convolutional-networks/) is a popular course to learn and experiment with CNN.
+5. The [video](https://www.youtube.com/watch?v=Ucp0TTmvqOE)(1:45:00-2:47:00) explains how self driving works in Tesla cars.
 
 
 ---
