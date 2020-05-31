@@ -50,6 +50,8 @@ google_analytics: UA-166296316-1
 # Build settings
 markdown: kramdown
 
+permalink: /:title/
+
 kramdown:
   # Use GitHub flavored markdown, including triple backtick fenced code blocks
   input: GFM
