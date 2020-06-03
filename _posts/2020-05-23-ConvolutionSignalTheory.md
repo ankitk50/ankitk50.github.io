@@ -163,6 +163,8 @@ The output shall generate two following images:
 <figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em>
 </figcaption>
 
+The behaviour of the filter can be understood by the fact that sum of all elements of the matrix is zero. If the image is smooth i.e. no changes in color, the convolution output of filter will be zero. But, if there is a sharp change in color gradient (in case of an edge), the output is non-zero. In this way the filter is able to achieve the outline of an image.
+
 Most recent and exciting application of convolution explores building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN or ConvNets](https://en.wikipedia.org/wiki/Convolutional_neural_network)) find application in face recognition, medical imaging, self driving cars etc. 
 <figure align="center">
 <p> 
