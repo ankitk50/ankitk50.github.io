@@ -12,14 +12,16 @@ Convolution is a key to deciphering various aspects of signal theory. This conce
 
 ## Introduction
 
-Signals are waves that carry information. Anything that accepts signal as an input and gives an output is a system. In a broad sense, systems allows signals to propagate through them. For e.g. a wire carrying electrical current is a system. Systems process and transform the signal as it passes through them. Here, for brevity we will consider systems that have linear behavior and do not change with time. The systems are categorized into Linear Time Invariant (LTI) systems. Let's consider the following scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. 
+Signals are waves that carry information. Anything that accepts signal as an input and gives an output is a system. In a broad sense, systems allows signals to propagate through them. For e.g. a wire carrying electrical current is a system. Systems process and transform the signal as it passes through them. Here, for brevity we will consider systems that have linear behavior and do not change with time. The category of systems is known as Linear Time Invariant (LTI) systems. 
+
+Let's consider a familiar scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. 
 
 <figure align="center">
 <img src="/blog/assets/conversation2.gif" width="220" height="250" alt="converation">
 <figcaption align="center" style="font-size:15px" ><em><b>Fig 1:</b> An exemplary conversation </em></figcaption>
 </figure>
 
-The voice signal flows through the air channel producing an output voice signal, received by the listener. The air channel alters the voice signal by adding distortions and noise.
+The voice signal flows through the air channel and is received by the listener. The air channel alters the voice signal by adding distortions and noise, i.e. the received voice signal is slighlty different than the original one.
 
 <figure align="center">
 <img src="/blog/assets/system.png" width="650" height="150" alt="signal System">
@@ -27,13 +29,13 @@ The voice signal flows through the air channel producing an output voice signal,
 </figure>
 
 
-It is often desired to model and understand the behavior of these systems. If we can somehow determine the equation governing the system, it would allow us to evaluate the behavior of the system for more types of signals. We can evaluate the effect of the channel on say, on WiFi signals, or blue-tooth signals.
+It is often desired to model and understand the behavior of these systems. The idea is that, if we can somehow determine the equation governing the system, it would allow us to evaluate the behavior of the system for different types of signals. We can evaluate the effect of the channel on say, on WiFi signals, or blue-tooth signals. Further, this analysis can greatly help engineers in design of communication systems.
 
 ---
 
 ## Impulse response to Convolution
 
-Interestingly, it turns out that a system provided with impulse function as input produces its equation as an output. This response(or output) of the system, measured using an impulse signal, is known as the ***Impulse response*** of the system. 
+The evaulation of equation governing a system might seem a challenging task. Surprisingly, there exist an interesting and simple approach to this problem. It turns out, when a system provided with impulse function as an input produces its equation as an output. This response(or output) of the system, measured using an impulse signal, is known as the ***Impulse response*** of the system. 
 
 $$
 \begin{align*}
@@ -43,7 +45,7 @@ $$
 \end{align*}
 $$ 
 
-The $$\ast$$ operator is used to denote convolution operation. Hence, convolution of an impulse signal $$\delta(t)$$ with system $$h(t)$$ is known as the impulse response. We can think impulse function as an arrow to capture the characteristics of a system, which is otherwise not known. 
+The $$\ast$$ operator is used to denote convolution operation. And, convolution of an impulse signal $$\delta(t)$$ with system $$h(t)$$ is known as the impulse response. We can think impulse function as an arrow to capture the characteristics of a system, which is otherwise not known. 
 
 We can verify this fact in few lines of python code:
 
@@ -66,7 +68,7 @@ $$
 \end{align*}
 $$ 
 
-Under the hood, the operation simply means flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. The two fundamental operations at play are shifting and adding. These two fundamental operations appear in all forms of convolution operation. This is shown in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
+Under the hood, the operation simplifies to flipping one of the signals and sweeping it across the entire range, evaluating the area of the overlapping region. The two fundamental operations at play are shifting and adding. These two fundamental operations appear in all forms of convolution operation. This is depicted in the following animation from [Wikipedia](https://en.wikipedia.org/wiki/Convolution).
 
 <figure align="center">
 <p> 
@@ -110,7 +112,7 @@ Apart from this, convolutions also work with images and have immense application
 
 ### Example 2:
 
- Image processing is another domain that witnesses huge application of convolution. Instead of having a signal/system, we have an input image(signal) and an image kernel (system). Images and the image kernel are nothing but matrices. The image kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
+Image processing is another domain that witnesses huge application of convolution. Instead of having a signal/system, we have an input image(signal) and an image kernel (system). Images and the image kernel are nothing but matrices with each pixel denoted by a number (or a set of numbers in case of colored images). The image kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
 
 Here as well, the convolution operation involves shifting and adding. The kernel slides over the image, element-wise multiplications are performed with the pixels of the image, and lastly the sum of these multiplications becomes a pixel of the output/filtered image.
 
@@ -163,9 +165,9 @@ The output shall generate two following images:
 <figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em>
 </figcaption>
 
-The behaviour of the filter can be understood by the fact that sum of all elements of the matrix is zero. If the image is smooth i.e. no changes in color, the convolution output of filter will be zero. But, if there is a sharp change in color gradient (in case of an edge), the output is non-zero. In this way the filter is able to achieve the outline of an image.
+The behavior of the filter can be understood by observing that sum of all the elements of the matrix is zero. If the image is smooth i.e. no changes in color, the convolution output of filter will be zero. But, if there is a sharp change in color gradient (in case of an edge), the output is non-zero. In this way the filter is able to achieve the outline of an image.
 
-Most recent and exciting application of convolution explores building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN or ConvNets](https://en.wikipedia.org/wiki/Convolutional_neural_network)) find application in face recognition, medical imaging, self driving cars etc. 
+The convolution operation beautifully scales from the field of signal processing to neural networks. Convolution is at the heart of some of the most complex yet profound applications such as self driving cars, face recognition used in face unlock, [cancer detection](https://ai.googleblog.com/2017/03/assisting-pathologists-in-detecting.html), etc. 
 <figure align="center">
 <p> 
 <img src="/blog/assets/tesla.gif" width="535" height="299" alt="convolution">
@@ -174,8 +176,13 @@ Most recent and exciting application of convolution explores building deep learn
 </figcaption>
 </figure>
 
-As exploring CNN is not in the scope of this post, you can find more at [CS231n](https://cs231n.github.io/convolutional-networks/). 
+These applications are possible using the idea of convolution that explores building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN or ConvNets](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
 
+CNN are further being used in [text to speech synthesis](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio) to mimic human voice. This [pictionary](https://quickdraw.withgoogle.com/) game uses CNN. Make sure you do not miss CNN being used in [autonomous drone].(https://www.youtube.com/watch?v=wSFYOw4VIYY)
+
+
+
+ 
 ---
 
 ## Further Reading
