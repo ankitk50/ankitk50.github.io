@@ -47,32 +47,8 @@ The $$\ast$$ operator is used to denote convolution operation. Hence, convolutio
 
 We can verify this fact in few lines of python code:
 
-```python
-import numpy as np
-import matplotlib.pyplot as plt
-from scipy import signal
+<script src="https://gist.github.com/ankitk50/1bd7b1c0adda9f97f8c7aeaf7fc1cec0.js"></script>
 
-imp = signal.unit_impulse(100, 'mid') #impulse signal
-sig = np.repeat([0., 1., 0.], 100) #system function
-
-#plot layout
-fig = plt.figure(figsize=(15,5))
-ax1 = fig.add_subplot(1,3,1)
-ax2 = fig.add_subplot(1,3,2)
-ax3 = fig.add_subplot(1,3,3)
-ax1.set_title('Input')
-ax2.set_title('System')
-ax3.set_title('Response')
-
-#output= imp * sig
-response = signal.convolve(sig, imp, mode='same') / sum(sig) 
-
-#plot
-ax1.plot(imp,'orange')
-ax2.plot(sig,'blue')
-ax3.plot(response,'green')
-
-```
 The output looks like this: 
 
 <figure align="center">
@@ -174,26 +150,8 @@ $$
 
 This same techniques can be applied to images as follows in python:
 
-```python
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import cv2
-import numpy as np
+<script src="https://gist.github.com/ankitk50/2791a6af15c39b2b8e4c4c4c0c4177bb.js"></script>
 
-# Read in the image
-image = mpimg.imread('cameraman-grayscale.png')
-
-# Outline filter
-outline= np.array([[-1,-1,-1],
-                 [-1,8,-1],
-                 [-1,-1,-1]])
-
-# applying filter to the image
-filtered_image = cv2.filter2D(image, -1, outline)
-plt.imshow(image)
-plt.imshow(filtered_image, cmap='gray')
-
-```
 Here, we convolved the image with an outline filter: $$\begin{pmatrix}-1 & -1 & -1 \\ -1 & 8 & -1 \\-1 & -1 & -1 \end{pmatrix}$$. 
 
 The output shall generate two following images:
@@ -204,6 +162,8 @@ The output shall generate two following images:
 </figure>
 <figcaption align ='center' style="font-size:15px"> <em><b>Fig 6:</b> <b>Left</b>: Input image. <b>Right</b>: Filtered image  </em>
 </figcaption>
+
+The behaviour of the filter can be understood by the fact that sum of all elements of the matrix is zero. If the image is smooth i.e. no changes in color, the convolution output of filter will be zero. But, if there is a sharp change in color gradient (in case of an edge), the output is non-zero. In this way the filter is able to achieve the outline of an image.
 
 Most recent and exciting application of convolution explores building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN or ConvNets](https://en.wikipedia.org/wiki/Convolutional_neural_network)) find application in face recognition, medical imaging, self driving cars etc. 
 <figure align="center">
