@@ -178,7 +178,7 @@ The convolution operation beautifully scales from the field of signal processing
 
 These applications are possible using the idea of convolution that explores building deep learning models to classify images and identify objects. This class of deep learning models known as Convolutional Neural Networks (or [CNN or ConvNets](https://en.wikipedia.org/wiki/Convolutional_neural_network)).
 
-CNN are further being used in [text to speech synthesis](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio) to mimic human voice. This [pictionary](https://quickdraw.withgoogle.com/) game uses CNN. Make sure you do not miss CNN being used in [autonomous drone].(https://www.youtube.com/watch?v=wSFYOw4VIYY)
+CNN are further being used in [text to speech synthesis](https://deepmind.com/blog/article/wavenet-generative-model-raw-audio) to mimic human voice. This [pictionary](https://quickdraw.withgoogle.com/) game uses CNN. Make sure you do not miss CNN being used in [autonomous drone](https://www.youtube.com/watch?v=wSFYOw4VIYY).
 
 
 
