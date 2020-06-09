@@ -3,12 +3,13 @@ layout: post
 title: Signal Theory and Convolution
 comment: true
 ---
+
+Convolution is a key to deciphering various aspects of signal theory. This concept is often left to its theoretical analysis and analytical perplexity. This is an attempt to illuminate this beautiful concept with some intuitive examples and explanations. 
 <p align="center"> 
 <img src="/blog/assets/CLT1.gif" width="800" height="300" alt="Central limit theorem">
 </p>
 <!--<img src="/blog/assets/jfourier.jpg" width="120" height="150" alt="fourier_gif"> -->
 
-Convolution is a key to deciphering various aspects of signal theory. This concept is often left to its theoretical analysis and analytical perplexity. This is an attempt to illuminate this beautiful concept with some intuitive examples and explanations. 
 
 ## Introduction
 
