@@ -31,6 +31,10 @@ twitter_username: oldMagnum
 github_username:  ankitk50
 #permalink: /:title/
 
+twitter: 
+  username: oldMagnum
+  
+
 footer-links:
   dribbble:
   email: ankitk50@gmail.com
