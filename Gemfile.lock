@@ -83,6 +83,7 @@ DEPENDENCIES
   jekyll-avatar
   jekyll-feed (~> 0.12)
   jekyll-figure
+  jekyll-seo-tag
   jekyll_figure
   minima (~> 2.5)
   tzinfo (~> 1.2)

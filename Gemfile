@@ -33,3 +33,5 @@ gem 'jekyll-avatar'
 gem 'jekyll_figure'
 
 gem 'jekyll-figure'
+
+gem 'jekyll-seo-tag'
