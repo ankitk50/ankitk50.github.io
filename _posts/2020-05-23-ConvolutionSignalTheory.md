@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Signal theory and Convolution
+title: Signal Theory and Convolution
 comment: true
 ---
 <p align="center"> 
@@ -12,7 +12,7 @@ Convolution is a key to deciphering various aspects of signal theory. This conce
 
 ## Introduction
 
-Signals are waves that carry information. Anything that accepts a signal as input and gives an output signal is a system. Systems process and transform the information as a signal passes through them. Let's consider the following scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. 
+Signals are waves that carry information. Anything that accepts signal as an input and gives an output is a system. In a broad sense, systems allows signals to propagate through them. For e.g. a wire carrying electrical current is a system. Systems process and transform the signal as it passes through them. Here, for brevity we will consider systems that have linear behavior and do not change with time. The systems are categorized into Linear Time Invariant (LTI) systems. Let's consider the following scenario-- when two people talk, the person speaking generates an input voice signal, and the air channel b/w the two participants act as a system. 
 
 <figure align="center">
 <img src="/blog/assets/conversation2.gif" width="220" height="250" alt="converation">
@@ -134,9 +134,9 @@ Apart from this, convolutions also work with images and have immense application
 
 ### Example 2:
 
-I would like to briefly tough upon image processing where slightly different terminologies are used. Instead of having a signal/system, we have an input image(signal) and an image kernel (system). Images and the image kernel are nothing but matrices. The image kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
+ Image processing is another domain that witnesses huge application of convolution. Instead of having a signal/system, we have an input image(signal) and an image kernel (system). Images and the image kernel are nothing but matrices. The image kernel (also known as filters) is a matrix (usually smaller than your image) used to apply effects on an image such as blurring, sharpening, outlining etc.
 
-Again, the convolution operation involves shifting and adding. The kernel slides over the image, element-wise multiplications are performed with the pixels of the image, and lastly the sum of these multiplications becomes a pixel of the output/filtered image.
+Here as well, the convolution operation involves shifting and adding. The kernel slides over the image, element-wise multiplications are performed with the pixels of the image, and lastly the sum of these multiplications becomes a pixel of the output/filtered image.
 
 Given below is an example of convolution operation between two matrices:
 
