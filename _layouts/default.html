@@ -2,7 +2,9 @@
 <html>
   <head>
 
-
+    {% if jekyll.environment == 'production' %}
+    {% include analytics.html %}
+    {% endif %}
 
     <title>{% if page.title %}{{ page.title }} – {% endif %}{{ site.name }} – {{ site.description }}</title>
     {% include meta.html %}
@@ -54,6 +56,6 @@
       </div>
     </div>
 
-    {% include analytics.html %}
+   <!-- {% include analytics.html %} -->
   </body>
 </html>
