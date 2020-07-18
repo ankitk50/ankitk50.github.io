@@ -50,7 +50,7 @@ The $$\ast$$ operator is used to denote convolution operation. And, convolution 
 
 We can verify this fact in few lines of python code:
 
-<script src="https://gist.github.com/ankitk50/1bd7b1c0adda9f97f8c7aeaf7fc1cec0.js"></script>
+<script src="https://gist.github.com/ankitk50/bc9daf8d7b3f31cbb5cda7785d04ce92.js"></script>
 
 The output looks like this: 
 
