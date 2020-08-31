@@ -24,6 +24,7 @@ comment: true
 
 5. Introduction to git
 
+6. Wavelet transform
 
 
 
