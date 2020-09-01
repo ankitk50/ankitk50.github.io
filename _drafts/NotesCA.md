@@ -6,9 +6,9 @@ comment: true
 
 ## Introduction 
 
-Computer architecture is about designing a computer that is well suited for its purpose. For e.g. Desktop computer, laptops, mobile phones etc. have different applications due to which they require a different design approach. The aim of computer architects is to:
+Computer architecture is about designing a computer that is well suited for its purpose. For e.g. desktop computer, laptops, mobile phones etc. have different applications due to which they require a different design approach. The aim of computer architects is to:
 1. Improve performance - Speed, Battery, Life, Size, Weight, Energy efficiency etc.
-2. Improve abilities - 3D graphics rendering, Debugging Support, Security etc.
+2. Improve capabilities - 3D graphics rendering, Debugging Support, Security etc.
 
 A computer design involves anticipation of technology trends for design of futuristic computers. If you do design a computer with current technology without any anticipation of technology trends, the computer might become obsolete by the time the design is complete. For e.g. if the trend dictates speed of computers increasing by 10% each year, the designers must accommodate the advancement in their designs.
 
@@ -136,6 +136,9 @@ A processor performs various operation in a sequential manner. The operations ca
 
 In a pipeline once an instruction moves from fetch to decode step, another instruction is fetched. Similarly, when an instruction moves to execute step, fetched instruction moves to decode state and so on. This makes possible for pipelining to ideally achieve 1 cycle per instruction (CPI) ones the first instruction completes the step. This is similar to having an assembly line of car.
 
-However, CPI in not 1 due to following reasons:
+However, CPI in not '1' due to following reasons:
 1. There are initial steps involved (though as number of instructions increase these initial steps become negligible).
-2. 
+2. Pipeline stalls: Sometime one of the steps in the pipeline might take longer than expected. This can happen in instances where an instruction needs to read a register which may have right values at some point later. This delay increases the CPI.
+3. Pipeline flushes: In case of branch and Jump instructions, by the time instruction is decoded, subsequent instructions are already fetched. But due to the fact that a jump instruction altogether leads to a different address with different instructions, previous instructions in fetch and decode needs to be flushed by the processor.
+
+**Hazards** occur in a pipeline when there is a dependency that can cause 
