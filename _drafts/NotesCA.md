@@ -2,6 +2,7 @@
 layout: post
 title: Notes on Computer Architecture
 comment: true
+
 ---
 
 ## Introduction 
@@ -41,7 +42,7 @@ where, $$C$$ is the capacitance of the circuit, $$V$$ is voltage of the power su
 
 2. Static Power: This is power consumed when processor is powered on but idle. We can think our transistor to be water taps with voltage being the control knob. If voltage is reduce some water leaks out of the tap. This is leaked power.
 
- Cost of processor depends on the fabrication process. The fabrication process involves preparation of chips on a circular semiconductor wafer. Out of all fabrication chips, some are defective which reduces the **fabrication yield** and thus increases the overall cost per chip. The yield can vary due to defects in the wafer or defect in manufacturing process.
+Cost of processor depends on the fabrication process. The fabrication process involves preparation of chips on a circular semiconductor wafer. Out of all fabrication chips, some are defective which reduces the **fabrication yield** and thus increases the overall cost per chip. The yield can vary due to defects in the wafer or defect in manufacturing process.
 
 
 ## Metrics and Evaluation
@@ -141,4 +142,10 @@ However, CPI in not '1' due to following reasons:
 2. Pipeline stalls: Sometime one of the steps in the pipeline might take longer than expected. This can happen in instances where an instruction needs to read a register which may have right values at some point later. This delay increases the CPI.
 3. Pipeline flushes: In case of branch and Jump instructions, by the time instruction is decoded, subsequent instructions are already fetched. But due to the fact that a jump instruction altogether leads to a different address with different instructions, previous instructions in fetch and decode needs to be flushed by the processor.
 
-**Hazards** occur in a pipeline when there is a dependency that can cause 
+Broadly, **hazards** occur in a pipeline when there is a dependency that can cause operation to be executed with wrong values.
+In case the CPU detects a hazard situation it can:
+1. Flush dependent instruction (useful in case of control dependencies like jmp instruction)
+2. Stall dependent instruction (useful in case of data dependencies where we need to )
+3. Fix values read by dependent instruction
+
+One area to ponder can be the number of stages a pipeline should have. From above discussion for it is evident that the ideal scenario has $$CPI=1$$. If the pipeline has many stages, more instruction needs to be stalled/flushed in case of hazards which can significantly increase the CPI. But a deeper pipeline can also reduce work being done at each stage. This can further enable architects to have high clock frequency. Hence, the graph of execution time vs #no. of stages will be a 'U-shaped' curve.
