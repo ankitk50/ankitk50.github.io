@@ -144,8 +144,8 @@ However, CPI in not '1' due to following reasons:
 
 Broadly, **hazards** occur in a pipeline when there is a dependency that can cause operation to be executed with wrong values.
 In case the CPU detects a hazard situation it can:
-1. Flush dependent instruction (useful in case of control dependencies like jmp instruction)
-2. Stall dependent instruction (useful in case of data dependencies where we need to )
+1. Flush dependent instruction (useful in case of control dependencies like jump instruction)
+2. Stall dependent instruction (useful in case of data dependencies where we need to wait for the right values to be loaded)
 3. Fix values read by dependent instruction
 
 One area to ponder can be the number of stages a pipeline should have. From above discussion for it is evident that the ideal scenario has $$CPI=1$$. If the pipeline has many stages, more instruction needs to be stalled/flushed in case of hazards which can significantly increase the CPI. But a deeper pipeline can also reduce work being done at each stage. This can further enable architects to have high clock frequency. Hence, the graph of execution time vs #no. of stages will be a 'U-shaped' curve.
