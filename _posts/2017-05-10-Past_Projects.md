@@ -51,6 +51,14 @@ Here's a short video with our robot in action:
 
 ---
 
+## Teaching : Embedded systems
+
+The early exposure to research made me realize that nothing could be more rewarding than exploring new ideas, executing them, and along the way sharing your learning with others. At Design and Innovation Center, Panjab University, I started a group, **‘Embedded group of UIET’** to promote interdisciplinary research among students. I started interacting and teaching sessions after college hours on programming and embedded hardware design. The sessions were open for everyone and became an active space for exchanging ideas on cross-disciplinary research. 50+ students used to take part in these sessions daily. My joy lies in the fact that the group is still active and continues to act as one of the most prominent platforms of technical learning and student projects in the university.  For this initiative, I also received a letter of appreciation from the director of the institute.
+
+<p align="center"> 
+<img src="/blog/assets/egu.jpg" width="560" height="315" alt="Buss arrival detection">
+</p>
+
 If you are interested in my work and thoughts, check out my [Twitter](https://twitter.com/oldMagnum) or connect with me on [LinkedIn](https://www.linkedin.com/in/ankitk50/).
 
 
